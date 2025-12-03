@@ -1,0 +1,26 @@
+.dropdown {
+  display: flex;
+  justify-content: center;
+}
+
+.select {
+  font-family: var(--font-roboto), 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.select:hover {
+  border-color: #002228;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #002228;
+}

@@ -1,0 +1,184 @@
+
+import Link from 'next/link';
+import styles from '../legal-pages.module.css';
+
+export const metadata = {
+  title: 'Cookie Policy | BACKBAR',
+  description: 'Cookie Policy for BACKBAR - learn how we use cookies and how to manage your preferences.',
+};
+
+export default function CookiePolicy() {
+  return (
+    <div className={styles.pageContainer}>
+      
+      <div className={styles.contentWrapper}>
+        <section className={styles.section}>
+          <h1 className={styles.title}>Cookie Policy</h1>
+          <p className={styles.lastUpdated}>Last Updated: December 2, 2025</p>
+          
+          <div className={styles.content}>
+            <p>
+              This Cookie Policy explains how BACKBAR uses cookies and similar tracking technologies when you 
+              visit our website. We believe in transparency about how we collect and use data, and this policy 
+              provides detailed information about our use of cookies.
+            </p>
+
+            <h2>What Are Cookies?</h2>
+            <p>
+              Cookies are small text files that are placed on your device (computer, smartphone, or tablet) when 
+              you visit a website. They are widely used to make websites work more efficiently and provide 
+              information to website owners. Cookies can be "persistent" (remaining on your device until deleted 
+              or expired) or "session" (deleted when you close your browser).
+            </p>
+
+            <h2>How We Use Cookies</h2>
+            <p>
+              We use cookies to enhance your experience on our website, understand how you interact with our content, 
+              and improve our services. Specifically, we use cookies to:
+            </p>
+            <ul>
+              <li>Remember your preferences and settings</li>
+              <li>Understand which pages and features are most popular</li>
+              <li>Analyze website traffic and user behavior patterns</li>
+              <li>Improve website functionality and user experience</li>
+              <li>Maintain security and prevent fraud</li>
+            </ul>
+
+            <h2>Types of Cookies We Use</h2>
+            
+            <h3>Essential Cookies</h3>
+            <p>
+              These cookies are necessary for our website to function properly. They enable core functionality 
+              such as security, network management, and accessibility. These cookies do not store any personally 
+              identifiable information and cannot be disabled in our systems.
+            </p>
+
+            <h3>Analytics Cookies</h3>
+            <p>
+              We use Google Analytics to collect information about how visitors use our website. These cookies 
+              collect information in an anonymous form, including:
+            </p>
+            <ul>
+              <li>Number of visitors to the site</li>
+              <li>Pages visited during a session</li>
+              <li>Time spent on each page</li>
+              <li>How visitors arrived at the site (referral sources)</li>
+              <li>General geographic location (city/country level)</li>
+              <li>Device and browser information</li>
+            </ul>
+            <p>
+              This information helps us understand how our website is being used and how we can improve it. 
+              Google Analytics does not collect personally identifiable information, and we do not combine 
+              analytics data with any other data sources to identify individual users.
+            </p>
+
+            <h3>Functionality Cookies</h3>
+            <p>
+              These cookies allow our website to remember choices you make (such as your language preferences 
+              or region) and provide enhanced, more personalized features. They may also be used to provide 
+              services you have requested.
+            </p>
+
+            <h2>What We Don't Do</h2>
+            <p>It's important to us that you understand what we don't do with cookies:</p>
+            <ul>
+              <li><strong>We do not sell your data:</strong> We never sell, rent, or trade any data collected through cookies to third parties</li>
+              <li><strong>We do not harvest data for advertising:</strong> We do not use cookies to build advertising profiles or target you with ads</li>
+              <li><strong>We do not track across websites:</strong> We do not use cookies to track your browsing activity on other websites</li>
+              <li><strong>We do not share with data brokers:</strong> We do not share cookie data with data aggregation companies or marketing databases</li>
+            </ul>
+
+            <h2>Google Analytics Specifically</h2>
+            <p>
+              Google Analytics is the only third-party analytics service we use. Google Analytics uses cookies 
+              to help us understand website traffic and usage patterns. The information generated by the cookie 
+              about your use of the website (including your IP address) is transmitted to and stored by Google 
+              on servers in the United States.
+            </p>
+            <p>
+              Google uses this information to evaluate your use of the website, compile reports on website 
+              activity for website operators, and provide other services relating to website activity and 
+              internet usage. Google may also transfer this information to third parties where required to do 
+              so by law, or where such third parties process the information on Google's behalf.
+            </p>
+            <p>
+              You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>, 
+              which prevents your data from being used by Google Analytics.
+            </p>
+
+            <h2>Managing Your Cookie Preferences</h2>
+            
+            <h3>Browser Settings</h3>
+            <p>
+              Most web browsers allow you to control cookies through their settings. You can set your browser to:
+            </p>
+            <ul>
+              <li>Block all cookies</li>
+              <li>Accept only first-party cookies (from the website you're visiting)</li>
+              <li>Prompt you before accepting cookies</li>
+              <li>Delete cookies after each browsing session</li>
+            </ul>
+            <p>
+              Please note that blocking all cookies may impact your ability to use certain features of our website. 
+              Essential cookies are necessary for the website to function, while blocking analytics cookies will 
+              not affect your browsing experience but will limit our ability to improve the site.
+            </p>
+
+            <h3>Browser-Specific Instructions</h3>
+            <p>For detailed information on managing cookies in specific browsers:</p>
+            <ul>
+              <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+              <li><a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+              <li><a href="https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+              <li><a href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+            </ul>
+
+            <h2>Mobile Device Settings</h2>
+            <p>
+              Mobile devices also allow you to control cookies and tracking through privacy settings. Consult 
+              your device manufacturer's instructions for specific guidance on managing cookies on mobile devices.
+            </p>
+
+            <h2>Do Not Track Signals</h2>
+            <p>
+              Some browsers include a "Do Not Track" (DNT) feature that signals to websites that you do not want 
+              your online activity tracked. Because there is not yet a common understanding of how to interpret 
+              DNT signals, our website does not currently respond to DNT browser signals. We continue to monitor 
+              developments in DNT technology and may implement DNT recognition in the future.
+            </p>
+
+            <h2>Changes to This Cookie Policy</h2>
+            <p>
+              We may update this Cookie Policy from time to time to reflect changes in technology, legislation, 
+              or our business practices. When we make changes, we will update the "Last Updated" date at the top 
+              of this policy. We encourage you to review this policy periodically to stay informed about how we 
+              use cookies.
+            </p>
+
+            <h2>Additional Resources</h2>
+            <p>
+              For more information about cookies and how they work, you can visit:
+            </p>
+            <ul>
+              <li><a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer">All About Cookies</a></li>
+              <li><a href="https://www.aboutcookies.org" target="_blank" rel="noopener noreferrer">About Cookies</a></li>
+            </ul>
+
+            <h2>Questions About Cookies</h2>
+            <p>
+              If you have questions or concerns about our use of cookies or this Cookie Policy, please contact 
+              us through the information provided on our <Link href="/about">About page</Link>. For information 
+              about how we handle personal data, please refer to our <Link href="/privacy">Privacy Policy</Link>.
+            </p>
+
+            <div className={styles.navigationLinks}>
+              <Link href="/about" className={styles.navLink}>About</Link>
+              <Link href="/" className={styles.navLink}>Home</Link>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+    </div>
+  );
+}

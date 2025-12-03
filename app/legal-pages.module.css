@@ -1,0 +1,149 @@
+/* ===========================================
+   LEGAL PAGES - SHARED STYLES (MOBILE)
+   Used by: Privacy, Terms, Cookies, Disclaimer
+   Location: app/legal-pages.module.css
+   =========================================== */
+
+/* Page wrapper - accounts for fixed header */
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content area below header */
+.contentWrapper {
+  flex: 1;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  background-color: #fafafa;
+}
+
+/* Main content section */
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Page title */
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #002228;
+  margin: 0 0 8px 0;
+}
+
+/* Last updated date */
+.lastUpdated {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 32px 0;
+}
+
+/* Main content container */
+.content {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* Paragraphs */
+.content p {
+  margin: 0 0 20px 0;
+}
+
+/* Section headings (h2) */
+.content h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #002228;
+  margin: 40px 0 16px 0;
+}
+
+/* Subsection headings (h3) */
+.content h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #002228;
+  margin: 28px 0 12px 0;
+}
+
+/* Unordered lists */
+.content ul {
+  margin: 0 0 20px 0;
+  padding-left: 24px;
+}
+
+.content li {
+  margin-bottom: 8px;
+}
+
+/* Bold text within lists */
+.content li strong {
+  color: #002228;
+}
+
+/* Links within content */
+.content a {
+  color: #c9a227;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.content a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Navigation links at bottom of page */
+.navigationLinks {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 24px;
+}
+
+.navLink {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #c9a227;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.navLink:hover {
+  opacity: 0.8;
+}
+
+/* ===========================================
+   DESKTOP STYLES (min-width: 768px)
+   =========================================== */
+
+@media (min-width: 768px) {
+  .contentWrapper {
+    padding-top: 90px;
+    padding-bottom: 120px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .content {
+    font-size: 16px;
+  }
+
+  .content h2 {
+    font-size: 24px;
+  }
+
+  .content h3 {
+    font-size: 18px;
+  }
+}

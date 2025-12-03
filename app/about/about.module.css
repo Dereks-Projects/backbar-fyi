@@ -1,0 +1,219 @@
+/* ===========================================
+   ABOUT PAGE STYLES (MOBILE)
+   Location: app/about/about.module.css
+   =========================================== */
+
+/* Page wrapper */
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================================
+   HERO SECTION (MOBILE)
+   Gradient background with centered text
+   =========================================== */
+
+.hero {
+  background: linear-gradient(to bottom, #002228, #02293f);
+  padding: 140px 20px 60px 20px;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  letter-spacing: 1px;
+}
+
+.heroSubtitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 0.9;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===========================================
+   CONTENT SECTIONS (MOBILE)
+   Shared styles for Mission, Creator
+   =========================================== */
+
+.section {
+  padding: 50px 20px;
+  background-color: #fafafa;
+}
+
+.sectionAlt {
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.sectionContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #002228;
+  margin: 0 0 24px 0;
+}
+
+.sectionText {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.8;
+  margin: 0 0 20px 0;
+}
+
+.sectionText:last-child {
+  margin-bottom: 0;
+}
+
+/* ===========================================
+   MISSION SECTION (MOBILE)
+   =========================================== */
+
+.missionSection {
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.missionText {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.9;
+  margin: 0 0 24px 0;
+}
+
+.missionText:last-child {
+  margin-bottom: 0;
+}
+
+.highlight {
+  color: #002228;
+  font-weight: 500;
+}
+
+/* ===========================================
+   CREATOR SECTION (MOBILE)
+   =========================================== */
+
+.creatorSection {
+  padding: 50px 20px;
+  background-color: #fafafa;
+}
+
+/* ===========================================
+   COLLABORATE SECTION (MOBILE)
+   Light gray background with dark text
+   =========================================== */
+
+.collaborateSection {
+  padding: 60px 20px;
+  background-color: #e5e7eb;
+}
+
+.collaborateContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.collaborateTitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #002228;
+  margin: 0 0 24px 0;
+}
+
+.collaborateText {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.8;
+  margin: 0 0 32px 0;
+}
+
+.contactLink {
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #002228;
+  background-color: #c9a227;
+  padding: 14px 32px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.contactLink:hover {
+  opacity: 0.9;
+}
+
+/* ===========================================
+   DESKTOP STYLES (min-width: 768px)
+   =========================================== */
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 170px 20px 80px 20px;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+  }
+
+  .section,
+  .sectionAlt,
+  .missionSection,
+  .creatorSection {
+    padding: 60px 20px;
+  }
+
+  .sectionTitle,
+  .collaborateTitle {
+    font-size: 28px;
+  }
+
+  .missionSection {
+    padding: 70px 20px;
+  }
+
+  .missionText {
+    font-size: 17px;
+  }
+
+  .collaborateSection {
+    padding: 70px 20px;
+  }
+
+  .collaborateText {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,126 @@
+/* ===========================================
+   FOOTER CONTAINER (MOBILE)
+   =========================================== */
+
+.footer {
+  background-color: #002228;
+  padding: 40px 20px;
+  margin-top: 0;
+}
+
+.footerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===========================================
+   NAVIGATION LINKS (MOBILE)
+   =========================================== */
+
+.footerNav {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.navColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navColumn a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.navColumn a:hover {
+  color: #c9a227;
+}
+
+/* ===========================================
+   SOCIAL ICONS (MOBILE)
+   =========================================== */
+
+.socialIcons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.iconLink {
+  color: #ffffff;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconLink:hover {
+  color: #c9a227;
+}
+
+/* ===========================================
+   LOGO (MOBILE)
+   =========================================== */
+
+.logoSection {
+  margin-bottom: 16px;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 3px;
+}
+
+/* ===========================================
+   COPYRIGHT (MOBILE)
+   =========================================== */
+
+.copyright {
+  color: #9ca3af;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  margin: 0 0 12px 0;
+}
+
+/* ===========================================
+   BACK TO TOP (MOBILE)
+   =========================================== */
+
+.backToTop {
+  display: inline-block;
+  color: #c9a227;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+}
+
+.backToTop:hover {
+  opacity: 0.8;
+}
+
+/* ===========================================
+   DESKTOP STYLES (min-width: 768px)
+   =========================================== */
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footerNav {
+    gap: 60px;
+  }
+
+  .logo {
+    font-size: 48px;
+  }
+}

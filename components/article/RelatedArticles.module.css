@@ -1,0 +1,87 @@
+/* ===========================================
+   RELATED ARTICLES SECTION (MOBILE)
+   =========================================== */
+
+.relatedSection {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #dddddd;
+}
+
+.relatedTitle {
+  font-family: var(--font-roboto), 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 24px 0;
+}
+
+/* ===========================================
+   CARDS GRID (MOBILE - 1 column)
+   =========================================== */
+
+.relatedGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===========================================
+   INDIVIDUAL CARD (MOBILE)
+   =========================================== */
+
+.relatedCard {
+  text-decoration: none;
+  display: block;
+}
+
+.relatedCardImage {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.relatedCardTitle {
+  font-family: var(--font-roboto), 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.relatedCard:hover .relatedCardTitle {
+  color: #002228;
+}
+
+/* ===========================================
+   DESKTOP STYLES (min-width: 768px)
+   =========================================== */
+
+@media (min-width: 768px) {
+  .relatedSection {
+    margin-top: 60px;
+    padding-top: 40px;
+  }
+
+  .relatedTitle {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+
+  .relatedGrid {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .relatedCard {
+    flex: 1;
+  }
+
+  .relatedCardTitle {
+    font-size: 17px;
+  }
+}
