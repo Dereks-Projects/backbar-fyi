@@ -2,13 +2,15 @@
 
 ## Overview
 
-This template describes how to build a mobile-first magazine-style site using Next.js and Sanity.io. The first implementation is BACKBAR (backbar.fyi), a spirits education site. Future sites will use the same Sanity content lake, filtered by different categories.
+This template describes how to build a mobile-first magazine-style site using Next.js and Sanity.io. Reference implementation: BACKBAR (backbar.fyi). Future sites use the same Sanity content lake, filtered by different categories.
+
+**Reference screenshots of backbar.fyi are attached for mobile and desktop views.**
 
 ---
 
 ## Tech Stack
 
-- **Framework:** Next.js 16 (App Router)
+- **Framework:** Next.js 16.0.7 (App Router)
 - **CMS:** Sanity.io (headless, shared content lake)
 - **Styling:** CSS Modules (no Tailwind)
 - **Package Manager:** pnpm
@@ -21,8 +23,8 @@ This template describes how to build a mobile-first magazine-style site using Ne
 ### One Sanity Project, Multiple Sites
 
 All sites pull from the same Sanity project (`21zbxo34`, dataset `production`). Each site filters by:
-- `category` field (e.g., "spirits", "wine", "beer")
-- `sites` array field (e.g., "backbar", "somm")
+- `category` field (e.g., "spirits", "wine", "hospitality")
+- `sites` array field (e.g., "backbar", "somm", "hospitalityfyi")
 
 ### Folder Structure
 
@@ -33,6 +35,7 @@ project-root/
 │   ├── layout.tsx                  # Root layout (Header, Footer, fonts, OG tags)
 │   ├── globals.css                 # Global styles
 │   ├── page.module.css             # Homepage styles
+│   ├── icon.png                    # Favicon (MUST be here, not just public/)
 │   ├── sitemap.ts                  # Dynamic sitemap generation
 │   ├── robots.ts                   # Robots.txt generation
 │   ├── about/
@@ -48,11 +51,14 @@ project-root/
 │   │   └── page.tsx                # Content disclaimer
 │   ├── legal-pages.module.css      # Shared legal page styles
 │   └── articles/
-│       ├── page.tsx                # Articles archive
+│       ├── page.tsx                # Articles archive (page 1)
 │       ├── articles.module.css     # Archive styles
 │       ├── [slug]/
 │       │   ├── page.tsx            # Individual article (includes JSON-LD)
 │       │   └── article.module.css  # Article styles
+│       ├── page/
+│       │   └── [page]/
+│       │       └── page.tsx        # Pagination (page 2, 3, etc.)
 │       ├── subcategory/
 │       │   └── [subcategory]/
 │       │       └── page.tsx        # Filtered by subcategory
@@ -72,7 +78,6 @@ project-root/
 │   └── article/
 │       └── RelatedArticles.tsx + RelatedArticles.module.css
 ├── public/
-│   ├── [site]-favicon.png          # Favicon
 │   └── [site]-socialcard.jpg       # OG image (1200x630)
 ├── sanity/
 │   ├── lib/
@@ -92,10 +97,10 @@ All queries filter by category AND sites array:
 *[_type == "article" && category == "spirits" && "backbar" in sites]
 ```
 
-For a new site (e.g., wine site), change to:
+For a new site (e.g., hospitality site), change to:
 
 ```javascript
-*[_type == "article" && category == "wine" && "somm" in sites]
+*[_type == "article" && category == "hospitality" && "hospitalityfyi" in sites]
 ```
 
 ---
@@ -142,11 +147,35 @@ export async function generateMetadata({ params }: ArticlePageProps) {
 
 ---
 
+## Sanity Webhook for Auto-Deploy
+
+After deploying to Vercel, set up a webhook so publishing in Sanity triggers a rebuild:
+
+### Step 1: Create Deploy Hook in Vercel
+1. Vercel → Project → Settings → Git → Deploy Hooks
+2. Name: `sanity-publish`
+3. Branch: `main`
+4. Copy the generated URL
+
+### Step 2: Create Webhook in Sanity
+1. sanity.io/manage → Project → API → Webhooks → Add webhook
+2. Name: `[SITENAME] Deploy`
+3. URL: Paste Vercel deploy hook URL
+4. Dataset: `production`
+5. Trigger on: Create, Update, Delete (all checked)
+6. Filter: `_type == "article" && "[sitename]" in sites`
+7. HTTP method: POST
+8. Save
+
+Now publishing an article auto-deploys the site (~30-60 seconds).
+
+---
+
 ## Dynamic Filtering
 
 Subcategory and tag pages query Sanity directly—no hardcoded lists.
 
-**Why:** If you add a new subcategory (e.g., "Brandy") in Sanity, it works automatically without code changes.
+**Why:** If you add a new subcategory in Sanity, it works automatically without code changes.
 
 **How:** URL slug is converted to query value:
 - URL: `/articles/subcategory/other-spirits`
@@ -174,19 +203,35 @@ Next.js App Router defaults to Server Components. Use Client Components (`'use c
 
 ---
 
-## Pitfalls Encountered
+## Critical Pitfalls — Do NOT Do These
 
-1. **Hardcoded subcategory lists** — Broke when articles had subcategories not in the list. Solution: Query Sanity for actual values.
+### 1. Do NOT use `next/image` without full CSS preparation
+**Problem:** `next/image` with `fill` prop requires parent elements to have `position: relative` and defined dimensions. Without this, images break across entire site.
+**Solution:** Stick with `<img>` tags unless you're prepared to update all related CSS.
 
-2. **Case sensitivity** — Tags stored lowercase, URLs lowercase, display capitalized. Keep transformations consistent.
+### 2. Do NOT use `scroll-behavior: smooth` in globals.css
+**Problem:** Conflicts with Next.js App Router navigation. Pages load at wrong scroll position.
+**Solution:** Remove from CSS entirely. Next.js handles scroll reset automatically.
 
-3. **Event handlers in Server Components** — `onChange` fails in Server Components. Extract interactive elements into Client Components.
+### 3. Do NOT upgrade Next.js blindly
+**Problem:** Running `pnpm add next@latest` can break every TSX file.
+**Solution:** Use specific patch versions (e.g., `pnpm add next@16.0.7`). Test locally before pushing.
 
-4. **PortableText images** — Body images don't render by default. Must define custom components and expand asset URLs in query.
+### 4. Do NOT dump multiple files at once
+**Problem:** Files get saved to wrong locations, causing cascading errors.
+**Solution:** One file at a time, with exact folder path, wait for confirmation.
 
-5. **next/image requires CSS setup** — Using `next/image` with `fill` prop requires parent element to have `position: relative` and defined dimensions. Stick with `<img>` tags unless you configure all CSS properly.
+### 5. Do NOT put favicon only in public/
+**Problem:** May not be picked up by Next.js.
+**Solution:** Copy favicon to `app/icon.png` for guaranteed detection.
 
-6. **scroll-behavior: smooth conflicts with App Router** — Do NOT use `scroll-behavior: smooth` in globals.css. It breaks scroll-to-top on navigation. Next.js handles scroll reset automatically.
+### 6. Do NOT hardcode subcategory lists
+**Problem:** Breaks when articles have subcategories not in the list.
+**Solution:** Query Sanity for actual values dynamically.
+
+### 7. Do NOT use event handlers in Server Components
+**Problem:** `onChange`, `onClick` fail silently in Server Components.
+**Solution:** Extract interactive elements into separate Client Components with `'use client'`.
 
 ---
 
@@ -196,19 +241,22 @@ When creating a new site, change:
 
 | Item | Example |
 |------|---------|
-| Brand color | `#002228` → new color |
+| Header/brand color | `#002228` → new color |
+| Accent color | `#c9a227` → new color |
+| Page background | `#fafafa` (usually keep) |
+| Font | Roboto → new font |
 | Site name | "BACKBAR" → new name |
 | Category filter | `category == "spirits"` → new category |
 | Sites filter | `"backbar" in sites` → new site value |
 | Domain | backbar.fyi → new domain |
 | Metadata | Titles, descriptions, canonical URLs |
-| Public assets | favicon, socialcard images |
+| Public assets | socialcard image |
 
 ---
 
 ## Files to Copy vs Customize
 
-**Copy as-is:**
+**Copy structure as-is:**
 - `sanity/lib/client.ts`
 - `sanity/env.ts`
 - Component structures
@@ -217,16 +265,26 @@ When creating a new site, change:
 
 **Customize:**
 - `sanity/queries.ts` (change category filter)
-- `app/layout.tsx` (site name, colors, metadata, OG image path)
+- `app/layout.tsx` (site name, colors, metadata, OG image path, font)
 - All CSS files (brand colors)
 - Legal pages (site name, contact email)
 - `.env.local` (same project ID, but verify)
 
 ---
 
-## Still To Build
+## Deployment Checklist
 
-- Pagination (page 2, 3, etc.)
+1. ☐ All pages working locally (`pnpm dev`)
+2. ☐ Git initialized and pushed to GitHub
+3. ☐ Vercel project created and connected to repo
+4. ☐ Environment variables set in Vercel
+5. ☐ Domain added in Vercel
+6. ☐ DNS configured in GoDaddy (A record + CNAME)
+7. ☐ Sanity CORS origin added for new domain
+8. ☐ Sanity webhook created for auto-deploy
+9. ☐ Favicon in `app/icon.png`
+10. ☐ Social card image in `public/`
+11. ☐ Test publish from Sanity → verify auto-deploy works
 
 ---
 
@@ -239,6 +297,23 @@ pnpm dev
 # Install package
 pnpm add [package-name]
 
+# Install specific Next.js version
+pnpm add next@16.0.7
+
 # Build for production
 pnpm build
+
+# Git workflow
+git add .
+git commit -m "message"
+git push
 ```
+
+---
+
+## Post-Launch Tasks
+
+1. Add site to Google Analytics
+2. Add site to Google Search Console
+3. Submit sitemap.xml to Google
+4. Verify indexing
