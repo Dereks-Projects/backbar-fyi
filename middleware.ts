@@ -5,8 +5,8 @@ import type { NextRequest } from 'next/server'
 const BLOCKED_COUNTRIES = ['CN', 'RU']
 
 export function middleware(request: NextRequest) {
-  // Get country from Vercel's geo headers
-  const country = (request as any).geo?.country || ''
+  // Get country from Vercel's header (more reliable than request.geo)
+  const country = request.headers.get('x-vercel-ip-country') || ''
 
   // Check if country is blocked
   if (BLOCKED_COUNTRIES.includes(country)) {
