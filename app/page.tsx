@@ -12,7 +12,7 @@ import type { Metadata } from 'next'
 // This tells Google exactly what your homepage is about.
 
 export const metadata: Metadata = {
-  title: 'BACKBAR | Spirits Education & Bar Industry Insights',
+  title: 'Backbar.fyi | Bar Industry Insights & Spirits Education',
   description: 'Deep-dive articles on spirits, cocktails, and the bar industry. Expert education for bartenders, hospitality professionals, and spirits enthusiasts.',
   alternates: {
     canonical: 'https://backbar.fyi',
@@ -21,21 +21,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://backbar.fyi',
-    siteName: 'BACKBAR',
-    title: 'BACKBAR | Spirits Education & Bar Industry Insights',
+    siteName: 'Backbar.fyi',
+    title: 'Backbar.fyi | Bar Industry Insights & Spirits Education',
     description: 'Deep-dive articles on spirits, cocktails, and the bar industry. Expert education for bartenders, hospitality professionals, and spirits enthusiasts.',
     images: [
       {
         url: 'https://backbar.fyi/backbar-socialcard.jpg',
         width: 1200,
         height: 630,
-        alt: 'BACKBAR - Spirits Education',
+        alt: 'Backbar.fyi - Spirits Education',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BACKBAR | Spirits Education & Bar Industry Insights',
+    title: 'Backbar.fyi | Bar Industry Insights & Spirits Education',
     description: 'Deep-dive articles on spirits, cocktails, and the bar industry.',
     images: ['https://backbar.fyi/backbar-socialcard.jpg'],
   },
@@ -52,12 +52,12 @@ export default async function HomePage() {
   const websiteJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'BACKBAR',
+    name: 'Backbar.fyi',
     description: 'Deep-dive articles on spirits, cocktails, and the bar industry. Expert education for bartenders, hospitality professionals, and spirits enthusiasts.',
     url: 'https://backbar.fyi',
     publisher: {
       '@type': 'Organization',
-      name: 'BACKBAR',
+      name: 'Backbar.fyi',
       url: 'https://backbar.fyi',
     },
   }
@@ -65,10 +65,10 @@ export default async function HomePage() {
   const organizationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'BACKBAR',
+    name: 'Backbar.fyi',
     url: 'https://backbar.fyi',
     logo: 'https://backbar.fyi/backbar-favicon.png',
-    description: 'Spirits education and bar industry insights for hospitality professionals and enthusiasts.',
+    description: 'Spirits education and bar industry insights for hospitality employees and beverage enthusiasts.',
     sameAs: [],
   }
 

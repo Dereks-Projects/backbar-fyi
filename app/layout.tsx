@@ -12,7 +12,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "BACKBAR | Spirits Education & Bar Industry Insights",
+  title: "Backbar.fyi | Bar Industry Insights & Spirits Education",
   description: "Deep-dive articles on spirits, cocktails, and the bar industry. Expert education for bartenders, hospitality professionals, and spirits enthusiasts.",
   metadataBase: new URL('https://backbar.fyi'),
   icons: {
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'BACKBAR',
-    title: 'BACKBAR | Spirits Education & Bar Industry Insights',
+    siteName: 'Backbar.fyi',
+    title: 'Backbar.fyi | Bar Industry Insights & Spirits Education',
     description: 'Deep-dive articles on spirits, cocktails, and the bar industry. Expert education for bartenders, hospitality professionals, and spirits enthusiasts.',
     url: 'https://backbar.fyi',
     images: [
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
         url: '/backbar-socialcard.jpg',
         width: 1200,
         height: 630,
-        alt: 'BACKBAR - Spirits Education',
+        alt: 'Backbar.fyi - Spirits Education',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BACKBAR | Spirits Education & Bar Industry Insights',
+    title: 'Backbar.fyi | Bar Industry Insights & Spirits Education',
     description: 'Deep-dive articles on spirits, cocktails, and the bar industry.',
     images: ['/backbar-socialcard.jpg'],
   },

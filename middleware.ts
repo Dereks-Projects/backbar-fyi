@@ -23,7 +23,7 @@ export function middleware(request: NextRequest) {
             * { margin: 0; padding: 0; box-sizing: border-box; }
             body {
               font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
-              background-color: #002228;
+              background-color: #001015;
               color: #ffffff;
               min-height: 100vh;
               display: flex;
@@ -36,7 +36,7 @@ export function middleware(request: NextRequest) {
             h1 { 
               font-size: 32px; 
               margin-bottom: 16px;
-              color: #c9a227;
+              color: #a8d5ba;
             }
             p { 
               font-size: 16px; 

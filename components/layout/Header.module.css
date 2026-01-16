@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-color: #002228;
+  background-color: #001015;
   z-index: 1000;
 }
 
@@ -27,6 +27,10 @@
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 2px;
+}
+
+.logoAccent {
+  color: #a8d5ba;
 }
 
 /* ===========================================
@@ -118,7 +122,7 @@
   right: 0;
   height: calc(100vh - 70px);
   width: 75%;
-  background-color: #002228;
+  background-color: #001015;
   z-index: 999;
   transform: translateX(100%);
   transition: transform 0.3s ease;
@@ -165,13 +169,13 @@
 }
 
 .navLink:hover {
-  color: #c9a227;
+  color: #a8d5ba;
 }
 
 .navDivider {
   width: 100%;
   height: 1px;
-  background-color: #c9a227;
+  background-color: #a8d5ba;
   margin-bottom: 24px;
 }
 
@@ -194,7 +198,7 @@
 
 .legalLink:hover {
   opacity: 1;
-  color: #c9a227;
+  color: #a8d5ba;
 }
 
 .socialLinks {
@@ -208,7 +212,7 @@
 }
 
 .socialIcon:hover {
-  color: #c9a227;
+  color: #a8d5ba;
 }
 
 /* ===========================================

@@ -3,7 +3,7 @@
    =========================================== */
 
 .footer {
-  background-color: #002228;
+  background-color: #001015;
   padding: 40px 20px;
   margin-top: 0;
 }
@@ -38,7 +38,7 @@
 }
 
 .navColumn a:hover {
-  color: #c9a227;
+  color: #a8d5ba;
 }
 
 /* ===========================================
@@ -60,7 +60,7 @@
 }
 
 .iconLink:hover {
-  color: #c9a227;
+  color: #a8d5ba;
 }
 
 /* ===========================================
@@ -77,6 +77,10 @@
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 3px;
+}
+
+.logoAccent {
+  color: #a8d5ba;
 }
 
 /* ===========================================
@@ -96,7 +100,7 @@
 
 .backToTop {
   display: inline-block;
-  color: #c9a227;
+  color: #a8d5ba;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;

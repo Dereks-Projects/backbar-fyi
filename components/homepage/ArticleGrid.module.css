@@ -37,9 +37,9 @@
 }
 
 .moreButton:hover {
-  background-color: #002228;
+  background-color: #001015;
   color: #ffffff;
-  border-color: #002228;
+  border-color: #001015;
 }
 
 @media (min-width: 768px) {

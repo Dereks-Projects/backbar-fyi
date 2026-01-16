@@ -44,7 +44,7 @@
 .primaryButton {
   display: inline-block;
   padding: 12px 28px;
-  background-color: #c9a227;
+  background-color: #a8d5ba;
   color: #002228;
   text-decoration: none;
   font-weight: 500;
@@ -53,7 +53,7 @@
 }
 
 .primaryButton:hover {
-  background-color: #b8922a;
+  background-color: #a8d5ba;
 }
 
 .secondaryButton {

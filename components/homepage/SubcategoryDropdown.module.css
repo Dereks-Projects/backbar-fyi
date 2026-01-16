@@ -17,10 +17,10 @@
 }
 
 .select:hover {
-  border-color: #002228;
+  border-color: #001015;
 }
 
 .select:focus {
   outline: none;
-  border-color: #002228;
+  border-color: #001015;
 }

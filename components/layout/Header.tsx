@@ -22,7 +22,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.headerContent}>
         <Link href="/" className={styles.logo}>
-          BACKBAR
+          Backbar<span className={styles.logoAccent}>.fyi</span>
         </Link>
         
         {/* Hamburger / X button */}
@@ -52,7 +52,7 @@ export default function Header() {
       >
         <div className={styles.navContent}>
           {/* Brand header */}
-          <div className={styles.navBrand}>BACKBAR.fyi</div>
+          <div className={styles.navBrand}>Backbar<span className={styles.logoAccent}>.fyi</span></div>
           
           {/* Main navigation links */}
           <div className={styles.navLinks}>
@@ -96,7 +96,7 @@ export default function Header() {
           {/* Social icon */}
           <div className={styles.socialLinks}>
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/backbar.fyi/" 
               target="_blank" 
               rel="noopener noreferrer"
               className={styles.socialIcon}

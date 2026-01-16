@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Social and contact icons */}
         <div className={styles.socialIcons}>
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/backbar.fyi/" 
             target="_blank" 
             rel="noopener noreferrer"
             className={styles.iconLink}
@@ -48,12 +48,12 @@ export default function Footer() {
 
         {/* Large site logo */}
         <div className={styles.logoSection}>
-          <span className={styles.logo}>BACKBAR</span>
+          <span className={styles.logo}>Backbar<span className={styles.logoAccent}>.fyi</span></span>
         </div>
 
         {/* Copyright notice */}
         <p className={styles.copyright}>
-          Copyright 2025 - BACKBAR - All Rights Reserved
+          Copyright 2026 - Backbar.fyi - All Rights Reserved
         </p>
 
         {/* Back to top link */}
