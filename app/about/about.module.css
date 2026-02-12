@@ -12,11 +12,11 @@
 
 /* ===========================================
    HERO SECTION (MOBILE)
-   Gradient background with centered text
+   Black-to-dark-gray gradient with centered text
    =========================================== */
 
 .hero {
-  background: linear-gradient(to bottom, #002228, #02293f);
+  background: linear-gradient(to bottom, #001015, #2a2a2a);
   padding: 140px 20px 60px 20px;
   text-align: center;
 }
@@ -27,7 +27,7 @@
 }
 
 .heroTitle {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 700;
   color: #ffffff;
@@ -36,7 +36,7 @@
 }
 
 .heroSubtitle {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
@@ -47,7 +47,7 @@
 
 /* ===========================================
    CONTENT SECTIONS (MOBILE)
-   Shared styles for Mission, Creator
+   Shared styles for Mission, Company
    =========================================== */
 
 .section {
@@ -66,7 +66,7 @@
 }
 
 .sectionTitle {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #002228;
@@ -74,7 +74,7 @@
 }
 
 .sectionText {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #374151;
@@ -96,7 +96,7 @@
 }
 
 .missionText {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #374151;
@@ -114,17 +114,31 @@
 }
 
 /* ===========================================
-   CREATOR SECTION (MOBILE)
+   COMPANY SECTION (MOBILE)
    =========================================== */
 
-.creatorSection {
+.companySection {
   padding: 50px 20px;
   background-color: #fafafa;
 }
 
+.companyLink {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #002228;
+  text-decoration: none;
+  border-bottom: 1px solid #002228;
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.companyLink:hover {
+  opacity: 0.7;
+}
+
 /* ===========================================
    COLLABORATE SECTION (MOBILE)
-   Light gray background with dark text
    =========================================== */
 
 .collaborateSection {
@@ -139,7 +153,7 @@
 }
 
 .collaborateTitle {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #002228;
@@ -147,7 +161,7 @@
 }
 
 .collaborateText {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #374151;
@@ -157,7 +171,7 @@
 
 .contactLink {
   display: inline-block;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 500;
   color: #002228;
@@ -192,7 +206,7 @@
   .section,
   .sectionAlt,
   .missionSection,
-  .creatorSection {
+  .companySection {
     padding: 60px 20px;
   }
 

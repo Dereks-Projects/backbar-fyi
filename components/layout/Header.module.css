@@ -12,8 +12,8 @@
 }
 
 .headerContent {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
   align-items: center;
   padding: 15px 20px;
   max-width: 1400px;
@@ -21,12 +21,14 @@
 }
 
 .logo {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
   letter-spacing: 2px;
+  text-align: center;
+  grid-column: 2;
 }
 
 .logoAccent {
@@ -34,7 +36,36 @@
 }
 
 /* ===========================================
-   HAMBURGER BUTTON & X ANIMATION
+   CHEVRON (DOWN ARROW) BUTTON — LEFT SIDE
+   =========================================== */
+
+.portfolioButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  grid-column: 1;
+  z-index: 1002;
+}
+
+.chevronIcon {
+  width: 22px;
+  height: 22px;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.portfolioButtonOpen .chevronIcon {
+  transform: rotate(180deg);
+}
+
+/* ===========================================
+   HAMBURGER BUTTON & X ANIMATION — RIGHT SIDE
    =========================================== */
 
 .menuButton {
@@ -51,6 +82,7 @@
   height: 40px;
   position: relative;
   z-index: 1002;
+  grid-column: 3;
 }
 
 .hamburger {
@@ -91,7 +123,7 @@
 }
 
 /* ===========================================
-   OVERLAY (semi-transparent background)
+   OVERLAY (shared by both panels)
    =========================================== */
 
 .overlay {
@@ -113,7 +145,110 @@
 }
 
 /* ===========================================
-   NAVIGATION PANEL (MOBILE - 75% width)
+   PORTFOLIO PANEL (LEFT SIDE — slides from left)
+   =========================================== */
+
+.portfolioPanel {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  height: calc(100vh - 70px);
+  width: 75%;
+  background-color: #001015;
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.portfolioPanelOpen {
+  transform: translateX(0);
+}
+
+.portfolioContent {
+  padding: 30px 30px 40px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================================
+   PORTFOLIO PANEL CONTENT
+   =========================================== */
+
+.portfolioLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a8d5ba;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.portfolioLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.portfolioItem {
+  text-decoration: none;
+  display: block;
+}
+
+.portfolioSiteName {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  transition: color 0.2s ease;
+  margin-bottom: 2px;
+}
+
+.portfolioItem:hover .portfolioSiteName {
+  color: #a8d5ba;
+}
+
+.portfolioSiteDesc {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #999999;
+}
+
+.portfolioDivider {
+  width: 100%;
+  height: 1px;
+  background-color: #a8d5ba;
+  margin-bottom: 28px;
+}
+
+.presentedByLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #a8d5ba;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.parentCompanyLink {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.parentCompanyLink:hover {
+  color: #a8d5ba;
+}
+
+/* ===========================================
+   NAVIGATION PANEL (RIGHT SIDE — existing)
    =========================================== */
 
 .navPanel {
@@ -144,7 +279,7 @@
    =========================================== */
 
 .navBrand {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
@@ -160,7 +295,7 @@
 }
 
 .navLink {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
@@ -187,7 +322,7 @@
 }
 
 .legalLink {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: #ffffff;
@@ -220,6 +355,45 @@
    =========================================== */
 
 @media (min-width: 768px) {
+  .portfolioPanel {
+    width: 33.333%;
+    max-width: 400px;
+  }
+
+  .portfolioContent {
+    padding: 40px;
+  }
+
+  .portfolioLabel {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+
+  .portfolioLinks {
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .portfolioSiteName {
+    font-size: 18px;
+  }
+
+  .portfolioSiteDesc {
+    font-size: 14px;
+  }
+
+  .portfolioDivider {
+    margin-bottom: 32px;
+  }
+
+  .presentedByLabel {
+    font-size: 12px;
+  }
+
+  .parentCompanyLink {
+    font-size: 18px;
+  }
+
   .navPanel {
     width: 33.333%;
     max-width: 400px;

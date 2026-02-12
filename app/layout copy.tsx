@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-  variable: "--font-inter",
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -63,7 +63,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={inter.variable}>
+      <body className={roboto.variable}>
         <Header />
         <main>{children}</main>
         <Footer />
